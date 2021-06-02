@@ -8,10 +8,10 @@ using namespace std;
 int main()
 {
     char cuv1[100], cuv2[100], c;
-    char gasit1, gasit2, i;
+    int gasit1, gasit2, i;
     cin.getline(cuv1, 100);
     cin.get(cuv2, 100);
-    for(c='a', c<='z', c++)
+    for(c='a'; c<='z'; c++)
     {
         gasit1=0;
         gasit2=0;
@@ -23,6 +23,7 @@ int main()
                 gasit2=1;
         if(gasit1 && gasit2)
             cout<<c<<'\n';
+    }
     return 0;
 }*/
 
@@ -87,8 +88,8 @@ int main()
                 strcpy(s2+j,s2+j+1);
             else
                 j++;
-                if(strlen(s1)!=strlen(s2))
-    cout<<vocale[i]<<": "<<s2<<endl;
+        if(strlen(s1)!=strlen(s2))
+            cout<<vocale[i]<<": "<<s2<<endl;
     }
     return 0;
 }*/
@@ -110,7 +111,7 @@ int main()
     p=strtok(s, " ");
     while(p)
     {
-        if(strchr("aeiou",*p)!=NULL)
+        if(strchr("aeiou", *p))
             strrev(p);
         cout<<p<<" ";
         p=strtok(NULL," ");
@@ -121,7 +122,7 @@ int main()
 Fiecare cuvânt este urmat de un caracter *. Scrieţi un program C/C++ care citeşte un astfel de şir şi
 afişează pe ecran şirul obţinut prin eliminarea tuturor apariţiilor primului cuvânt, ca în exemplu.
 Exemplu: pentru şirul: bine*albine*foarte*bine* se va afişa: *albine*foarte**       */
-#include <iostream>
+/*#include <iostream>
 #include <cstring>
 
 using namespace std;
@@ -135,14 +136,14 @@ int main()
     char *q = strtok(NULL, "*");
     while(q)
     {
-        if(strcmp(p, q)!= 0)
+        if(strcmp(p, q))
             cout<<q;
         cout<<"*";
         strcpy(s2, p);
         q = strtok(NULL, "*");
     }
     return 0;
-}
+}*/
 
 /*VEZI Scrieţi programul C/C++ care citeşte de la tastatură un şir de cel mult 40 de caractere,
 format doar din litere ale alfabetului englez, şi care afişează pe ecran toate şirurile obţinute prin eliminarea succesivă
@@ -186,7 +187,7 @@ int main()
     int i;
     cin.getline(s, 100);
     for(i=0; i<strlen(s); i++)
-        if(strchr(vocale ,s[i])!=0)
+        if(strchr(vocale ,s[i]))
             s[i]++;
     cout<<s;
     return 0;
